@@ -1,0 +1,8 @@
+[user]
+	name = dcnbr
+	email = decembersnb@gmail.com
+[core]
+	editor = vim
+[pretty]
+	# credit Slipp Thompson - https://stackoverflow.com/a/9074343
+	synopsis = %C(bold blue)%h%C(reset) - %C(blue)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset) %C(dim white)- %an%C(reset)
