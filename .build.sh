@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# python & essentials
-if  ! command -v python3 ; then
-	apt -y install python3
-fi
-apt -y install python3-venv python3-pip
+# python
+apt -y install python3 python3-venv python3-pip
+
+# git
+apt -y install git
+
+# vim
+apt -y install vim
 
 # vundle & plugins
 if [ ! -d ~/.vim/bundle/vundle.vim ]; then
