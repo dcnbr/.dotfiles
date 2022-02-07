@@ -8,6 +8,7 @@ alias lsv='ls -alvh'
 alias anywhere='grep -rn . -e'
 alias where='_where'
 alias rmrf='_rmrf'
+alias cl='_cl'
 
 # default parameter additions
 alias vim='vim -c Goyo'
@@ -29,6 +30,14 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 
 # implementations of _aliases
+_cl() {  # cd-then-ls
+    dir="$*";
+    if [ $# -lt 1 ]; then
+		dir=$HOME;
+    fi;
+    builtin cd "${dir}" && ls --color=auto
+
+}
 
 _where() {  # where in a file is "$@" in this directory ? show me
 	grep -n --exclude-dir=* -e $@ *
