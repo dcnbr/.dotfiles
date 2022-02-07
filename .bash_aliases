@@ -25,7 +25,7 @@ alias gitconfig='vim ~/.gitconfig'
 # credit StreakyCobra and Nicola Paolucci
 # https://www.atlassian.com/git/tutorials/dotfiles
 # https://news.ycombinator.com/item?id=11071754
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 
 
 # implementations of _aliases
