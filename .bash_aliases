@@ -9,6 +9,7 @@ alias anywhere='grep -rn . -e'
 alias where='_where'
 alias rmrf='_rmrf'
 alias cl='_cl'
+alias apthist='_apthist'
 
 # default parameter additions
 alias vim='vim -c Goyo'
@@ -60,4 +61,10 @@ _git() {  # pretty git (references custom formats from .gitconfig)
 	fi
 }
 
+_apthist() {  # apt commandline history (https://askubuntu.com/a/250530)
+	(zcat $(ls -tr /var/log/apt/history.log*.gz); cat /var/log/apt/history.log) 2>/dev/null |
+	egrep '^(Start-Date:|Commandline:)' |
+	grep -v aptdaemon |
+	egrep '^Commandline:'
+}
 
