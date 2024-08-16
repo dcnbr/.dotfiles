@@ -10,6 +10,8 @@ alias where='_where'
 alias rmrf='_rmrf'
 alias cl='_cl'
 alias apthist='_apthist'
+alias open='wslview'
+alias cdd='cd /mnt/d'
 
 # default parameter additions
 alias vim='vim -c Goyo'
@@ -56,9 +58,16 @@ _rmrf() {  # 'rm -rf $@' but it asks nicely first
 _git() {  # pretty git (references custom formats from .gitconfig)
 	if [[ $1 == "log" ]]; then
 		/bin/git log --graph --abbrev-commit --decorate --format=synopsis ${@:2}
+	elif [[ $1 == "blink" ]]; then
+		/bin/git stash push -ku ${@:2}
+	elif [[ $1 == "bomb" ]]; then
+		/bin/git reset --hard ${@:2}
+	elif [[ $1 == "recall" ]]; then
+		/bin/git stash pop --index ${@:2}
 	else
 		/bin/git "$@"
 	fi
+
 }
 
 _apthist() {  # apt commandline history (https://askubuntu.com/a/250530)
